@@ -1,0 +1,64 @@
+body {
+    font-family: 'Meiryo UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffb6c1;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列構成 */
+    gap: 1px; /* 画像間のスペース */
+    justify-items: center;  /* 各画像を中央揃え */
+}
+
+.gallery img {
+    width: 100%; /* 各セル内で画像を最大幅に設定 */
+    max-width: 300px; /* 画像の最大幅を指定 */
+    height: auto; /* 縦横比を維持 */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* 画像を均等に表示 */
+}
+
+footer {
+    background-color: #ffb6c1;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* 画面幅が狭くなった場合のレスポンシブデザイン */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2列構成 */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1列構成 */
+    }
+}
