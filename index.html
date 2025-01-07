@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A&G</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.matchMedia("(max-width: 480px)").matches) {
+                document.body.style.zoom = "100%";
+            } else {
+                document.body.style.zoom = "175%";
+            }
+        });
+    </script>
 </head>
 <body>
     <header>

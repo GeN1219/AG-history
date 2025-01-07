@@ -25,18 +25,21 @@ main {
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3列構成 */
-    gap: 1px; /* 画像間のスペース */
-    justify-items: center;  /* 各画像を中央揃え */
+    gap: 0; /* 画像間の間隔を最小化 */
+    justify-items: center;
+    align-items: center;
 }
 
 .gallery img {
-    width: 100%; /* 各セル内で画像を最大幅に設定 */
-    max-width: 300px; /* 画像の最大幅を指定 */
-    height: auto; /* 縦横比を維持 */
+    width: 300px; /* 固定幅 */
+    height: 200px; /* 固定高さ */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    object-fit: cover; /* 画像を均等に表示 */
+    object-fit: cover; /* 縦横比を維持しつつトリミング */
+    margin: 2px 2px; /* 余計なマージンを排除 */
+    padding: 0; /* 余計なパディングを排除 */
 }
+
 
 footer {
     background-color: #ffb6c1;
@@ -54,11 +57,24 @@ footer a {
 @media (max-width: 768px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr); /* 2列構成 */
+        gap: 2px; /* モバイルでも間隔を調整 */
     }
 }
 
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr; /* 1列構成 */
+        gap: 2px;
     }
+
+    .gallery img {
+        width: 300px; /* 固定幅 */
+        height: 200px; /* 固定高さ */
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        object-fit: cover; /* 縦横比を維持しつつトリミング */
+        margin: 0; /* 余計なマージンを排除 */
+        padding: 0; /* 余計なパディングを排除 */
+    }
+    
 }
