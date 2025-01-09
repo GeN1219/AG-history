@@ -53,6 +53,25 @@ footer a {
     text-decoration: underline;
 }
 
+
+/* tripのbuttonスタイル */
+button {
+    background-color: #ffb6c1; /* 背景色に合わせる */
+    color: white; /* テキストの色を白に */
+    border: none; /* ボーダーをなくす */
+    border-radius: 20px; /* 角を丸くする */
+    padding: 10px 20px; /* パディングを追加 */
+    font-size: 16px; /* フォントサイズを調整 */
+    cursor: pointer; /* カーソルをポインターに */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    transition: background-color 0.3s ease; /* 背景色の変化にトランジションを追加 */
+    margin: 3px; /* ボタン同士の間隔を広げるためのマージンを追加 */
+}
+
+button:hover {
+    background-color: #ff8da1; /* ホバー時の背景色を変更 */
+}
+
 /* 画面幅が狭くなった場合のレスポンシブデザイン */
 @media (max-width: 768px) {
     .gallery {
