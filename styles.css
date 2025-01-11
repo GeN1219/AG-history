@@ -41,6 +41,54 @@ main {
 }
 
 
+.records {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr); /* 3列構成 */
+    gap: 20px;
+    justify-content: center
+}
+
+.record {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+.record:hover {
+    transform: translateY(-10px);
+}
+
+.record-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.record-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    max-height: 400px;
+    border-bottom: 1px solid #eee;
+    margin: 0 auto;
+}
+
+
+/* .record-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* 最大幅を300pxに設定 */
+/*    max-height: 200px; /* 最大高さを200pxに設定 */
+/*    border-bottom: 1px solid #eee;
+    object-fit: cover; /* 縦横比を維持しつつトリミング */
+/*    margin: 0 auto; /* 中央揃え */
+/*}*/
+
+
+
 footer {
     background-color: #ffb6c1;
     padding: 10px;
@@ -78,12 +126,22 @@ button:hover {
         grid-template-columns: repeat(2, 1fr); /* 2列構成 */
         gap: 2px; /* モバイルでも間隔を調整 */
     }
+
+    .records {
+        grid-template-columns: repeat(2, 1fr); /* 携帯では2列構成 */
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr; /* 1列構成 */
         gap: 2px;
+    }
+
+    .records {
+        grid-template-columns: 1fr; /* 1列構成 */
+        gap: 10px;
     }
 
     .gallery img {
